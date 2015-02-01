@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('tagged', ['ionic','ngCordova', 'tag.controllers', 'tag.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -43,7 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+        controller: 'RecentCtrl'
       }
     }
   })
@@ -66,6 +66,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+      .state('tab.groups', {
+        url: '/groups',
+        views: {
+          'tab-groups': {
+            templateUrl: 'templates/tab-groups.html',
+            controller: 'GroupsCtrl'
+          }
+        }
+      })
+      .state('tab.group-detail', {
+        url: '/groups/:groupId',
+        views: {
+          'tab-groups': {
+            templateUrl: 'templates/group-detail.html',
+            controller: 'GroupDetailCtrl'
+          }
+        }
+      })
 
   .state('tab.friends', {
       url: '/friends',

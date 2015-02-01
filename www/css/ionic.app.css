@@ -2769,11 +2769,11 @@ a.subdued {
       background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%); }
   .bar.bar-stable {
     border-color: #b2b2b2;
-    background-color: #f8f8f8;
+    background-color: coral;/*tagger modified*/
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
     color: #444; }
     .bar.bar-stable .title {
-      color: #444; }
+      color: white; }/*tagger modified*/
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
@@ -2854,7 +2854,8 @@ a.subdued {
     white-space: nowrap;
     font-size: 17px;
     font-weight: 500;
-    line-height: 44px; }
+    line-height: 44px;
+    color:white;}/*tagger modified*/
     .bar .title.title-left {
       text-align: left; }
     .bar .title.title-right {
@@ -3107,7 +3108,8 @@ a.subdued {
 .bar-header {
   top: 0;
   border-top-width: 0;
-  border-bottom-width: 1px; }
+  border-bottom-width: 1px;
+  background-color:blue;}/*tagger-modified*/
   .bar-header.has-tabs-top {
     border-bottom-width: 0px;
     background-image: none; }
@@ -3277,7 +3279,7 @@ a.subdued {
     color: #444; }
 
 .tabs-striped .tabs {
-  background-color: white;
+  background-color: cornsilk;
   background-image: none;
   border: none;
   border-bottom: 1px solid #ddd;
@@ -4736,8 +4738,8 @@ a.item-content {
   padding-top: 8px;
   padding-bottom: 8px;
   min-height: 30px;
-  background-color: #f5f5f5;
-  color: #222;
+  background-color: blue;
+  color: white;
   font-weight: 500; }
 
 .platform-ios .item-divider-platform, .item-divider-ios {
