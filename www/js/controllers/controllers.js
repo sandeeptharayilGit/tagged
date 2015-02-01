@@ -1,28 +1,55 @@
-angular.module('starter.controllers', [])
+angular.module('tag.controllers', [])
+    .controller('ChatsCtrl', function($scope, Chats) {
+      $scope.chats = Chats.all();
+      $scope.remove = function(chat) {
+        Chats.remove(chat);
+      }
+    })
 
-.controller('DashCtrl', function($scope) {})
+    .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+      $scope.chat = Chats.get($stateParams.chatId);
+    })
+    .controller('GroupsCtrl', function($scope, $stateParams,$ionicModal) {
+      $scope.groups = [{
+        name: 'Extra Ordinary Boys',
+        info:'Lunch group',
+        members: ['Sans','Khan','Chengat','Hari','Jyo']
+      }]
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
-})
+      $ionicModal.fromTemplateUrl('/templates/modals/group-modal.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      }).then(function(modal) {
+        $scope.modal = modal
+      })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
+      $scope.openModal = function(group) {
+        $scope.groupSelected=group;
+        $scope.modal.show()
+      }
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
+      $scope.closeModal = function() {
+        $scope.modal.hide();
+      };
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
+      $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+      });
+    })
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+    .controller('GroupDetailCtrl', function($scope, $stateParams, Chats) {
+      $scope.chat = Chats.get($stateParams.chatId);
+    })
+    .controller('FriendsCtrl', function($scope, Friends) {
+      $scope.friends = Friends.all();
+    })
+
+    .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
+      $scope.friend = Friends.get($stateParams.friendId);
+    })
+
+    .controller('AccountCtrl', function($scope) {
+      $scope.settings = {
+        enableFriends: true
+      };
+    });
