@@ -10,7 +10,7 @@ angular.module('tag.controllers')
             members: ['Sans','Khan','Chengat','Hari','Jyo']
         }]
 
-        $ionicModal.fromTemplateUrl('group-modal.html', {
+        $ionicModal.fromTemplateUrl('/templates/modals/group-modal.html', {
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function(modal) {
