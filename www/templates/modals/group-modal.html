@@ -1,6 +1,6 @@
 <div class="modal">
     <ion-header-bar>
-        <h1 class="title">Edit Group</h1>
+        <h1 class="bar bar-header bar-balanced">Edit Group</h1>
     </ion-header-bar>
     <ion-content>
         <div class="list">
@@ -15,7 +15,7 @@
             <label class="item item-input">
                 <span class="input-label">Memebrs</span>
             </label>
-            <input type="text" ng-repeat="member in groupSelected.members" ng-model="member"><br>
+            <div class="group-modal-member" ng-repeat="member in groupSelected.members"><input type="text"  ng-model="member"></div>
         </div>
 
         <button class="button button-full button-energized" ng-click="closeModal()">Done</button>

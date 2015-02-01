@@ -5,7 +5,7 @@
     <div class="list card" ng-repeat="update in updates">
       <div class="item item-divider" ng-bind="update.friend"></div>
       <div class="item item-body">
-        <div ng-repeat="message in update.messages"><span ng-bind="message"></span></div>
+        <div ng-repeat="message in update.messages track by $index | orderBy:predicate:reverse"><span ng-bind="message"></span></div>
       </div>
     </div>
   </ion-content>

@@ -1,14 +1,13 @@
 <ion-view view-title="Groups">
   <ion-content>
     <ion-list>
-        <div class="card" ng-repeat="group in groups"  ng-click="openModal(group);">
-          <div class="item item-divider">
-            {{group.name}}
-          </div>
-          <div class="item item-text-wrap">
-            {{group.info}}
-          </div>
+      <div class="list" ng-repeat="group in groups" >
+        <div class="item item-avatar "  ng-click="openModal(group);">
+          <img src="img/group.jpg" />
+          <h3>{{group.name}}<h3>
+            <span>{{group.info}}</span>
         </div>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>
